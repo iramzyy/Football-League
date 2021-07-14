@@ -13,9 +13,11 @@
 		2CD642C9269F401E00D1AB70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD642C7269F401E00D1AB70 /* Main.storyboard */; };
 		2CD642CB269F402000D1AB70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD642CA269F402000D1AB70 /* Assets.xcassets */; };
 		2CD642CE269F402000D1AB70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD642CC269F402000D1AB70 /* LaunchScreen.storyboard */; };
+		86E05519A2B3DE0A320F2025 /* Pods_Football_League.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C52A87DD07F665209EAF64B /* Pods_Football_League.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C52A87DD07F665209EAF64B /* Pods_Football_League.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Football_League.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD642BE269F401E00D1AB70 /* Football-League.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Football-League.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD642C1269F401E00D1AB70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CD642C3269F401E00D1AB70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		2CD642CA269F402000D1AB70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CD642CD269F402000D1AB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CD642CF269F402000D1AB70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41C6DAE9E8EC2CA115B344BB /* Pods-Football-League.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Football-League.debug.xcconfig"; path = "Target Support Files/Pods-Football-League/Pods-Football-League.debug.xcconfig"; sourceTree = "<group>"; };
+		FE443692FE895682C9F3A045 /* Pods-Football-League.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Football-League.release.xcconfig"; path = "Target Support Files/Pods-Football-League/Pods-Football-League.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86E05519A2B3DE0A320F2025 /* Pods_Football_League.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F7ED81AF31753606714F053 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41C6DAE9E8EC2CA115B344BB /* Pods-Football-League.debug.xcconfig */,
+				FE443692FE895682C9F3A045 /* Pods-Football-League.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2CD642B5269F401E00D1AB70 = {
 			isa = PBXGroup;
 			children = (
 				2CD642C0269F401E00D1AB70 /* Football-League */,
 				2CD642BF269F401E00D1AB70 /* Products */,
+				0F7ED81AF31753606714F053 /* Pods */,
+				663B643EC5285F4179369B8D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = "Football-League";
 			sourceTree = "<group>";
 		};
+		663B643EC5285F4179369B8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C52A87DD07F665209EAF64B /* Pods_Football_League.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CD642D2269F402000D1AB70 /* Build configuration list for PBXNativeTarget "Football-League" */;
 			buildPhases = (
+				F49869444F0E5A85BFABDE8E /* [CP] Check Pods Manifest.lock */,
 				2CD642BA269F401E00D1AB70 /* Sources */,
 				2CD642BB269F401E00D1AB70 /* Frameworks */,
 				2CD642BC269F401E00D1AB70 /* Resources */,
+				C2604A6631BA9C014DACA01F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C2604A6631BA9C014DACA01F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Football-League/Pods-Football-League-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Football-League/Pods-Football-League-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Football-League/Pods-Football-League-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F49869444F0E5A85BFABDE8E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Football-League-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2CD642BA269F401E00D1AB70 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		2CD642D3269F402000D1AB70 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41C6DAE9E8EC2CA115B344BB /* Pods-Football-League.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -303,6 +373,7 @@
 		};
 		2CD642D4269F402000D1AB70 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE443692FE895682C9F3A045 /* Pods-Football-League.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
