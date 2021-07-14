@@ -3,16 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2CD642C2269F401E00D1AB70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD642C1269F401E00D1AB70 /* AppDelegate.swift */; };
 		2CD642C4269F401E00D1AB70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD642C3269F401E00D1AB70 /* SceneDelegate.swift */; };
-		2CD642C6269F401E00D1AB70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD642C5269F401E00D1AB70 /* ViewController.swift */; };
-		2CD642C9269F401E00D1AB70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD642C7269F401E00D1AB70 /* Main.storyboard */; };
 		2CD642CB269F402000D1AB70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD642CA269F402000D1AB70 /* Assets.xcassets */; };
 		2CD642CE269F402000D1AB70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD642CC269F402000D1AB70 /* LaunchScreen.storyboard */; };
+		2CD642DA269F433B00D1AB70 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD642D9269F433B00D1AB70 /* Router.swift */; };
+		2CD642DD269F446400D1AB70 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD642DC269F446400D1AB70 /* NetworkError.swift */; };
+		2CD642DF269F44D400D1AB70 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD642DE269F44D400D1AB70 /* Endpoint.swift */; };
+		2CD642E1269F44E700D1AB70 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD642E0269F44E700D1AB70 /* NetworkManager.swift */; };
 		86E05519A2B3DE0A320F2025 /* Pods_Football_League.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C52A87DD07F665209EAF64B /* Pods_Football_League.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,11 +23,13 @@
 		2CD642BE269F401E00D1AB70 /* Football-League.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Football-League.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD642C1269F401E00D1AB70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CD642C3269F401E00D1AB70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2CD642C5269F401E00D1AB70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2CD642C8269F401E00D1AB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CD642CA269F402000D1AB70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CD642CD269F402000D1AB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CD642CF269F402000D1AB70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CD642D9269F433B00D1AB70 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		2CD642DC269F446400D1AB70 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		2CD642DE269F44D400D1AB70 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2CD642E0269F44E700D1AB70 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		41C6DAE9E8EC2CA115B344BB /* Pods-Football-League.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Football-League.debug.xcconfig"; path = "Target Support Files/Pods-Football-League/Pods-Football-League.debug.xcconfig"; sourceTree = "<group>"; };
 		FE443692FE895682C9F3A045 /* Pods-Football-League.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Football-League.release.xcconfig"; path = "Target Support Files/Pods-Football-League/Pods-Football-League.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +52,6 @@
 				41C6DAE9E8EC2CA115B344BB /* Pods-Football-League.debug.xcconfig */,
 				FE443692FE895682C9F3A045 /* Pods-Football-League.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,15 +76,89 @@
 		2CD642C0269F401E00D1AB70 /* Football-League */ = {
 			isa = PBXGroup;
 			children = (
-				2CD642C1269F401E00D1AB70 /* AppDelegate.swift */,
-				2CD642C3269F401E00D1AB70 /* SceneDelegate.swift */,
-				2CD642C5269F401E00D1AB70 /* ViewController.swift */,
-				2CD642C7269F401E00D1AB70 /* Main.storyboard */,
-				2CD642CA269F402000D1AB70 /* Assets.xcassets */,
-				2CD642CC269F402000D1AB70 /* LaunchScreen.storyboard */,
-				2CD642CF269F402000D1AB70 /* Info.plist */,
+				2CD642D6269F42E000D1AB70 /* Common */,
+				2CD642D5269F42D900D1AB70 /* Modules */,
 			);
 			path = "Football-League";
+			sourceTree = "<group>";
+		};
+		2CD642D5269F42D900D1AB70 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2CD642D6269F42E000D1AB70 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2CD642E3269F491A00D1AB70 /* App */,
+				2CD642E2269F490000D1AB70 /* Configuration */,
+				2CD642E5269F492900D1AB70 /* Extensions */,
+				2CD642E4269F492400D1AB70 /* Resources */,
+				2CD642D7269F42EC00D1AB70 /* Externals */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2CD642D7269F42EC00D1AB70 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				2CD642DB269F43D400D1AB70 /* Network */,
+				2CD642D8269F432600D1AB70 /* Router */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		2CD642D8269F432600D1AB70 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				2CD642D9269F433B00D1AB70 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		2CD642DB269F43D400D1AB70 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2CD642DC269F446400D1AB70 /* NetworkError.swift */,
+				2CD642DE269F44D400D1AB70 /* Endpoint.swift */,
+				2CD642E0269F44E700D1AB70 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2CD642E2269F490000D1AB70 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				2CD642CF269F402000D1AB70 /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		2CD642E3269F491A00D1AB70 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2CD642C1269F401E00D1AB70 /* AppDelegate.swift */,
+				2CD642C3269F401E00D1AB70 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2CD642E4269F492400D1AB70 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2CD642CA269F402000D1AB70 /* Assets.xcassets */,
+				2CD642CC269F402000D1AB70 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2CD642E5269F492900D1AB70 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		663B643EC5285F4179369B8D /* Frameworks */ = {
@@ -153,7 +230,6 @@
 			files = (
 				2CD642CE269F402000D1AB70 /* LaunchScreen.storyboard in Resources */,
 				2CD642CB269F402000D1AB70 /* Assets.xcassets in Resources */,
-				2CD642C9269F401E00D1AB70 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,23 +282,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CD642C6269F401E00D1AB70 /* ViewController.swift in Sources */,
+				2CD642DA269F433B00D1AB70 /* Router.swift in Sources */,
 				2CD642C2269F401E00D1AB70 /* AppDelegate.swift in Sources */,
+				2CD642E1269F44E700D1AB70 /* NetworkManager.swift in Sources */,
 				2CD642C4269F401E00D1AB70 /* SceneDelegate.swift in Sources */,
+				2CD642DF269F44D400D1AB70 /* Endpoint.swift in Sources */,
+				2CD642DD269F446400D1AB70 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2CD642C7269F401E00D1AB70 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CD642C8269F401E00D1AB70 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2CD642CC269F402000D1AB70 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -358,7 +429,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7YM9Q56F5D;
-				INFOPLIST_FILE = "Football-League/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Football-League/Common/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,7 +450,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7YM9Q56F5D;
-				INFOPLIST_FILE = "Football-League/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Football-League/Common/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
