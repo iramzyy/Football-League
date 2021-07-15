@@ -10,7 +10,7 @@ import Foundation
 // MARK: Teams Presenter -
 
 class TeamsPresenter: TeamsPresenterProtocol, TeamsInteractorOutputProtocol {
-  
+    
     weak var view: TeamsViewProtocol?
     private let interactor: TeamsInteractorInputProtocol
     private let router: TeamsRouterProtocol
@@ -27,14 +27,18 @@ class TeamsPresenter: TeamsPresenterProtocol, TeamsInteractorOutputProtocol {
         self.interactor = interactor
         self.router = router
     }
-
+    
     func viewDidLoad() {
-        view?.showActivityIndicator()
         getLeagueTeams()
     }
     
     func getLeagueTeams() {
-        interactor.getLeagueTeams()
+        view?.showActivityIndicator()
+        if Reachability.checkConnection() {
+            interactor.getLeagueTeams()
+        } else {
+            view?.showErrorMessage(error: "Please check your internet connection")
+        }
     }
     
     func configureCell(cell: TeamTableViewCell, indexPath: IndexPath) {
@@ -44,7 +48,8 @@ class TeamsPresenter: TeamsPresenterProtocol, TeamsInteractorOutputProtocol {
     }
     
     func didSelectTeam(at indexPath: IndexPath) {
-        
+        let teamId = teams[indexPath.row].id
+        router.routeToTeamDetails(teamId: teamId)
     }
     
     func didGetTeamsSuccessfully(model: TeamsModel) {

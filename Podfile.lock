@@ -1,28 +1,40 @@
 PODS:
   - Alamofire (5.4.3)
+  - MarqueeLabel (4.0.5)
+  - NotificationBannerSwift (3.0.6):
+    - MarqueeLabel (~> 4.0.5)
+    - SnapKit (~> 5.0.1)
   - SDWebImage/Core (5.11.1)
   - SDWebImageSVGCoder (1.6.0):
     - SDWebImage/Core (~> 5.6)
   - SKActivityIndicatorView (1.0.0)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - NotificationBannerSwift
   - SDWebImageSVGCoder
   - SKActivityIndicatorView
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - MarqueeLabel
+    - NotificationBannerSwift
     - SDWebImage
     - SDWebImageSVGCoder
     - SKActivityIndicatorView
+    - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
+  NotificationBannerSwift: 7021be2338f8f29cf424b0aca43da462bf9e2a1a
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageSVGCoder: 020cc0f1ab0ef8ca63a9365c03421d67aa3d4a46
   SKActivityIndicatorView: 81c123380127ad497f9b57cd4d11347e40ab3427
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: d24055c3623ea3d07a15ca2c57717b9859ae7c70
+PODFILE CHECKSUM: 887281a13ecdaf7483c3d01d1364d630dba0093f
 
 COCOAPODS: 1.10.1

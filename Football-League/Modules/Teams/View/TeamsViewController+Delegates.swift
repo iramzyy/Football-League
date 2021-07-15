@@ -7,6 +7,7 @@
 
 import UIKit
 import SKActivityIndicatorView
+import NotificationBannerSwift
 
 extension TeamsViewController: TeamsViewProtocol {
     func reloadData() {
@@ -22,8 +23,7 @@ extension TeamsViewController: TeamsViewProtocol {
     }
     
     func showErrorMessage(error: String) {
-        print(error)
+        let banner = NotificationBanner(title: "Something went wrong", subtitle: error,  style: .danger)
+        banner.show()
     }
-    
-    
 }

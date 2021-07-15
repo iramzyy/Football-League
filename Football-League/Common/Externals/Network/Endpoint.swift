@@ -37,7 +37,7 @@ extension Endpoint {
     }
     
     var defaultParams: Parameters {
-        var param = Parameters()
+        let param = Parameters()
         return param
     }
     

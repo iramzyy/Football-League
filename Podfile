@@ -9,4 +9,5 @@ target 'Football-League' do
   pod 'Alamofire'
   pod 'SKActivityIndicatorView'
   pod 'SDWebImageSVGCoder'
+  pod 'NotificationBannerSwift'
 end

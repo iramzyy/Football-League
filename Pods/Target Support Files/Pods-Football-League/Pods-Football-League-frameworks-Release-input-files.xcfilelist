@@ -1,5 +1,8 @@
 ${PODS_ROOT}/Target Support Files/Pods-Football-League/Pods-Football-League-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework
+${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImageSVGCoder/SDWebImageSVGCoder.framework
 ${BUILT_PRODUCTS_DIR}/SKActivityIndicatorView/SKActivityIndicatorView.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework

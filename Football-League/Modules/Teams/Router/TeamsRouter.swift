@@ -25,6 +25,7 @@ class TeamsRouter: TeamsRouterProtocol {
     }
     
     func routeToTeamDetails(teamId: Int) {
-        
+        let teamDetailsViewController = TeamDetailsRouter.createModule(teamId: teamId)
+        viewController?.navigationController?.pushViewController(teamDetailsViewController, animated: true)
     }
 }

@@ -24,7 +24,6 @@ class TeamsInteractor: TeamsInteractorInputProtocol {
             case .success(let value):
                 self?.presenter?.didGetTeamsSuccessfully(model: value)
             case .failure(let error):
-                print(error)
                 self?.presenter?.didFailWithError(error: error.localizedDescription)
             }
         }
