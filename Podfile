@@ -8,5 +8,5 @@ target 'Football-League' do
   # Pods for Football-League
   pod 'Alamofire'
   pod 'SKActivityIndicatorView'
-  pod 'Kingfisher'
+  pod 'SDWebImageSVGCoder'
 end

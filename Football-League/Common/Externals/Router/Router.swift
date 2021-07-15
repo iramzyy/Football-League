@@ -21,8 +21,8 @@ class MainRouter: Router {
     }
     
     func start() {
-//        let welcomeViewController = WelcomeRouter.createModule()
-//        navigationController = UINavigationController(rootViewController: welcomeViewController)
+        let teamsViewController = TeamsRouter.createModule()
+        navigationController = UINavigationController(rootViewController: teamsViewController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }

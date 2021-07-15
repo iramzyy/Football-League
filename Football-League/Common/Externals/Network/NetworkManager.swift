@@ -15,23 +15,20 @@ protocol NetworkProtocol: AnyObject {
 
 class AlamofireManager: NetworkProtocol {
     func callRequest<T>(_ object: T.Type, endpoint: Endpoint, onComplete: @escaping ((Result<T, Error>) -> Void)) where T : Decodable, T : Encodable {
-        DispatchQueue.global(qos: .background).async {
-            AF.request(endpoint).responseJSON { (response) in
-                debugPrint(response)
-                do {
-                    guard let statusCode = response.response?.statusCode else {return}
-                    switch statusCode {
-                    case 200...399:
-                        let model = try JSONDecoder().decode(T.self, from: response.data!)
-                        onComplete(.success(model))
-                    case 403:
-                        onComplete(.failure(NetworkError.forbidden))
-                    default:
-                        onComplete(.failure(NetworkError.somethingWentWrong))
-                    }
-                } catch {
+        AF.request(endpoint).responseJSON { (response) in
+            do {
+                guard let statusCode = response.response?.statusCode else {return}
+                switch statusCode {
+                case 200:
+                    let model = try JSONDecoder().decode(T.self, from: response.data!)
+                    onComplete(.success(model))
+                case 403:
+                    onComplete(.failure(NetworkError.forbidden))
+                default:
                     onComplete(.failure(NetworkError.somethingWentWrong))
                 }
+            } catch {
+                onComplete(.failure(NetworkError.somethingWentWrong))
             }
         }
     }
