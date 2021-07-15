@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImageSVGCoder
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,6 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         mainRouter = MainRouter(window: window!)
         mainRouter?.start()
+        setupSVGCoder()
+    }
+    
+    private func setupSVGCoder() {
+        let SVGCoder = SDImageSVGCoder.shared
+        SDImageCodersManager.shared.addCoder(SVGCoder)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

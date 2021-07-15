@@ -21,6 +21,7 @@ protocol TeamsViewProtocol: AnyObject {
 protocol TeamsPresenterProtocol: AnyObject {
     var view: TeamsViewProtocol? { get set }
     var teamsCount: Int {get}
+    var tableViewRowHeight: Double {get}
     
     func viewDidLoad()
     func getLeagueTeams()

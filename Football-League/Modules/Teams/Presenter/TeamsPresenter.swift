@@ -10,7 +10,7 @@ import Foundation
 // MARK: Teams Presenter -
 
 class TeamsPresenter: TeamsPresenterProtocol, TeamsInteractorOutputProtocol {
-    
+
     weak var view: TeamsViewProtocol?
     private let interactor: TeamsInteractorInputProtocol
     private let router: TeamsRouterProtocol
@@ -18,6 +18,10 @@ class TeamsPresenter: TeamsPresenterProtocol, TeamsInteractorOutputProtocol {
     
     var teamsCount: Int {
         return teams.count
+    }
+    
+    var tableViewRowHeight: Double {
+        return 65.0
     }
     
     private var teams: [Team] = []
@@ -61,6 +65,6 @@ class TeamsPresenter: TeamsPresenterProtocol, TeamsInteractorOutputProtocol {
     
     func didFailWithError(error: String) {
         view?.hideActivityIndicator()
-        view?.showErrorMessage(error: error)
+        view?.showErrorMessage(error: "Error while fetching teams.")
     }
 }

@@ -49,6 +49,6 @@ class TeamDetailsPresenter: TeamDetailsPresenterProtocol, TeamDetailsInteractorO
     
     func didFailWithError(error: String) {
         view?.hideActivityIndicator()
-        view?.showErrorMessage(error: error)
+        view?.showErrorMessage(error: "Error while getting team details")
     }
 }
